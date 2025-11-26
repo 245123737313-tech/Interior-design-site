@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Interior Studio | Modern Interior Design</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (for icons) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-EO1s9wq9wF4XJQSWsMSk07WZB3o3O8AA0Z5IK0kVgCqI2UeZ8QZbQbYHf7PC9lsV+v/4vYyV2Xv0QFHvT1C3HQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    :root {
+      --bg: #f5f5f7;
+      --bg-alt: #ffffff;
+      --accent: #c59d5f;
+      --accent-soft: rgba(197, 157, 95, 0.1);
+      --text-main: #222222;
+      --text-muted: #666666;
+      --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.06);
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --max-width: 1120px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Layout Helpers */
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-heading h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-heading p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Header / Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(245, 245, 247, 0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 4.5rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+    }
+
+    .logo-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #c59d5f, #e6c899);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.8rem;
+      box-shadow: 0 8px 18px rgba(197, 157, 95, 0.4);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.8rem;
+      font-size: 0.9rem;
+    }
+
+    nav ul li a {
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--accent);
+      transition: width 0.25s ease;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .btn {
+      border: none;
+      border-radius: var(--radius-pill);
+      padding: 0.55rem 1.4rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 10px 25px rgba(197, 157, 95, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 13px 30px rgba(197, 157, 95, 0.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* Mobile Nav Toggle */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4rem 0 5rem;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-radius: var(--radius-pill);
+      padding: 0.35rem 0.8rem;
+      background: var(--accent-soft);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.2rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .eyebrow span {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 4vw, 3.1rem);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      margin-bottom: 1.6rem;
+      max-width: 30rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.7rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--text-main);
+    }
+
+    .hero-gallery-card {
+      background: var(--bg-alt);
+      border-radius: 26px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-gallery-main {
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      aspect-ratio: 4 / 3;
+    }
+
+    .hero-gallery-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.02);
+      transition: transform 2.5s ease;
+    }
+
+    .hero-gallery-card:hover .hero-gallery-main img {
+      transform: scale(1.08);
+    }
+
+    .hero-badges {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 0.8rem;
+      font-size: 0.75rem;
+    }
+
+    .badge-pill {
+      padding: 0.4rem 0.8rem;
+      border-radius: var(--radius-pill);
+      background: #f8f4ec;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-floating-card {
+      position: absolute;
+      right: 10%;
+      bottom: 8%;
+      background: #ffffff;
+      padding: 0.7rem 1rem;
+      border-radius: 18px;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.75rem;
+    }
+
+    .hero-floating-card i {
+      padding: 0.5rem;
+      border-radius: 50%;
+      background: var(--accent-soft);
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--bg-alt);
+      padding: 1.5rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+    }
+
+    .service-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-soft);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .service-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .service-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Projects / Portfolio */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.09);
+    }
+
+    /* Fix project image height */
+.project-image {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+    .project-card:hover .project-image img {
+      transform: scale(1.08);
+    }
+
+    .project-label {
+      position: absolute;
+      left: 0.8rem;
+      top: 0.8rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      font-size: 0.7rem;
+    }
+
+    .project-body {
+      padding: 1.1rem 1.1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+    }
+
+    .project-body h3 {
+      font-size: 0.98rem;
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* About + Process */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+    }
+
+    .about-pill {
+      background: var(--bg-alt);
+      padding: 0.7rem 0.9rem;
+      border-radius: 14px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .process {
+      background: var(--bg-alt);
+      padding: 1.4rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.88rem;
+    }
+
+    .process-step {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+    }
+
+    .process-step + .process-step {
+      margin-top: 0.9rem;
+      padding-top: 0.9rem;
+      border-top: 1px dashed rgba(0, 0, 0, 0.08);
+    }
+
+    .step-index {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .about-visual {
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      background: linear-gradient(135deg, #f3eee4, #e4ded3);
+      padding: 1.5rem;
+    }
+
+    .about-visual-inner {
+      border-radius: 18px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background-image: url("https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80");
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Contact */
+    .contact {
+      background: #111111;
+      color: #f9f9f9;
+      border-radius: 32px 32px 0 0;
+      margin-top: 4rem;
+      padding: 4rem 0 3rem;
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: flex-start;
+    }
+
+    .contact h2 {
+      font-size: 2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .contact p {
+      color: #b5b5b5;
+      font-size: 0.92rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .contact-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+      font-size: 0.85rem;
+      margin-top: 1.2rem;
+    }
+
+    .contact-meta div span {
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #8a8a8a;
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-form {
+      background: #181818;
+      padding: 1.7rem;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+      font-size: 0.9rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.35rem;
+      color: #a6a6a6;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid #2a2a2a;
+      padding: 0.7rem 0.8rem;
+      background: #111111;
+      color: #f9f9f9;
+      outline: none;
+      font-family: inherit;
+      font-size: 0.9rem;
+      transition: border 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(197, 157, 95, 0.5);
+      background: #151515;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .contact .btn-primary {
+      width: 100%;
+      margin-top: 0.4rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #111111;
+      color: #888888;
+      border-top: 1px solid #1f1f1f;
+      padding: 1.2rem 0 1.8rem;
+      font-size: 0.8rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-inner,
+      .about-grid,
+      .contact-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-gallery-card {
+        order: -1;
+      }
+
+      .contact {
+        border-radius: 26px 26px 0 0;
+      }
+
+      nav ul {
+        position: absolute;
+        inset: 4.4rem 0 auto 0;
+        background: rgba(245, 245, 247, 0.98);
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0 1.4rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        transform: translateY(-120%);
+        opacity: 0;
+        pointer-events: none;
+        transition: var(--transition);
+      }
+
+      nav ul.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .services-grid,
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .services-grid,
+      .projects-grid,
+      .about-highlights,
+      .contact-meta {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      section {
+        padding: 3.5rem 0;
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <div class="logo-mark">IS</div>
+        <span>Interior Studio</span>
+      </div>
+
+      <nav>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul id="navMenu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <span>Book a free call</span>
+        <a href="#contact" class="btn btn-primary">
+          Let’s talk
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="home" class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="eyebrow">
+          <span></span>
+          Tailored interiors, timeless comfort
+        </div>
+        <h1>Designing homes that feel like you.</h1>
+        <p>
+          We craft modern, warm interiors that balance style and function —
+          from cozy apartments to luxury villas, every space is thoughtfully curated.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">
+            Get a design proposal
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#projects" class="btn btn-outline">
+            View our projects
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <div>
+            <strong>120+</strong>
+            Homes transformed
+          </div>
+          <div>
+            <strong>4.9 / 5</strong>
+            Client satisfaction
+          </div>
+          <div>
+            <strong>8+ yrs</strong>
+            Design experience
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-gallery-card">
+        <div class="hero-gallery-main">
+          <img
+            src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1200&q=80"
+            alt="Modern living room interior"
+          >
+        </div>
+
+        <div class="hero-badges">
+          <div class="badge-pill">
+            <i class="fas fa-couch"></i>
+            Scandinavian • Japandi • Minimal
+          </div>
+          <span style="font-size: 0.75rem; color: var(--text-muted);">
+            Residential &nbsp;•&nbsp; Commercial
+          </span>
+        </div>
+
+        <div class="hero-floating-card">
+          <i class="fas fa-star"></i>
+          <div>
+            <strong>“They redesigned our home beautifully!”</strong>
+            <div style="font-size: 0.7rem; color: var(--text-muted);">
+              — Shasha Sighala , Hyderabad
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Services</h2>
+        <p>Everything you need — from concept to complete execution.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-pencil-ruler"></i>
+          </div>
+          <h3>Full Home Design</h3>
+          <p>
+            End-to-end interior design for your entire home, including layout,
+            furniture, lighting, and décor planning.
+          </p>
+          <span class="service-tag">2BHK • 3BHK • Villas</span>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-palette"></i>
+          </div>
+          <h3>Online Design Consult</h3>
+          <p>
+            Get moodboards, 3D views, and shopping lists — all virtually, tailored
+            to your budget and style.
+          </p>
+          <span class="service-tag">Remote • Budget friendly</span>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3>Commercial Spaces</h3>
+          <p>
+            Cafes, studios, and offices that welcome people and match your brand
+            identity perfectly.
+          </p>
+          <span class="service-tag">Cafes • Studios • Offices</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Recent Projects</h2>
+        <p>Spaces we transformed into calm, functional, and beautiful environments.</p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-image">
+            <img
+              src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80"
+              alt="Warm living room interior design"
+            >
+            <span class="project-label">Living Room</span>
+          </div>
+          <div class="project-body">
+            <h3>Soft Minimal Living</h3>
+            <p>
+              A light-filled living room with layered textures and warm neutrals.
+            </p>
+            <div class="project-meta">
+              <span>Bengaluru</span>
+              <span>2024</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <img
+              src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1200&q=80"
+              alt="Bedroom interior design"
+            >
+            <span class="project-label">Bedroom</span>
+          </div>
+          <div class="project-body">
+            <h3>Calm Japandi Bedroom</h3>
+            <p>
+              Clean lines, soft fabrics, and warm wood tones for restful nights.
+            </p>
+            <div class="project-meta">
+              <span>Hyderabad</span>
+              <span>2023</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+  <div class="project-image">
+    <img 
+      src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80"
+      alt="Warm cozy dining room interior"
+    >
+    <span class="project-label">Dining</span>
+  </div>
+  <div class="project-body">
+    <h3>Warm Modern Dining</h3>
+    <p>
+      A cozy dining space with soft lighting, wood textures and a calm, welcoming feel.
+    </p>
+    <div class="project-meta">
+      <span>Pune</span>
+      <span>2024</span>
+    </div>
+  </div>
+</article>
+
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Process -->
+  <section id="about">
+    <div class="container">
+      <div class="section-heading">
+        <h2>About the Studio</h2>
+        <p>Design-first, but always grounded in your lifestyle and needs.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            We are a boutique interior design studio focused on warm,
+            contemporary spaces. Every home we design is customized —
+            we listen to how you live, move, and relax before we decide
+            where the sofa goes.
+          </p>
+
+          <div class="about-highlights">
+            <div class="about-pill">
+              <strong>Human-centered</strong>
+              <div>We design for real routines, not just pretty pictures.</div>
+            </div>
+            <div class="about-pill">
+              <strong>Material-aware</strong>
+              <div>We help you choose finishes that last and are easy to maintain.</div>
+            </div>
+            <div class="about-pill">
+              <strong>Budget conscious</strong>
+              <div>Smart mixes of custom and ready-made pieces.</div>
+            </div>
+            <div class="about-pill">
+              <strong>Sustainable choices</strong>
+              <div>Where possible, we suggest eco-friendlier materials.</div>
+            </div>
+          </div>
+
+          <div class="process">
+            <strong style="display:block; margin-bottom:0.6rem;">How we work</strong>
+
+            <div class="process-step">
+              <div class="step-index">01</div>
+              <div>
+                <strong>Discovery Call</strong><br>
+                We understand your space, needs, style, and budget.
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-index">02</div>
+              <div>
+                <strong>Concept & Moodboards</strong><br>
+                We share layout options, color palettes, and inspirations.
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-index">03</div>
+              <div>
+                <strong>Detailed Design & Execution</strong><br>
+                Drawings, 3D views, material selection, and on-site support.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-visual">
+          <div class="about-visual-inner"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div>
+          <h2>Let’s design your space.</h2>
+          <p>
+            Share a few details and we’ll get back within 24–48 hours with
+            next steps, timelines, and an approximate budget range.
+          </p>
+
+          <div class="contact-meta">
+            <div>
+              <span>Email</span>
+              interiorstudio09@gmail.com
+            </div>
+            <div>
+              <span>Phone</span>
+              +91-0293764783 or +91-8899887770
+            </div>
+            <div>
+              <span>Location</span>
+              Bengaluru • Available PAN India Service (Online)
+            </div>
+            <div>
+              <span>Working Hours</span>
+              Monday–Sunday, 10:00 AM – 10:00 PM
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" onsubmit="handleFormSubmit(event)">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your full name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="spaceType">Type of space</label>
+            <select id="spaceType" required>
+              <option value="">Select an option</option>
+              <option>Full Home</option>
+              <option>Living / Dining</option>
+              <option>Bedroom</option>
+              <option>Kitchen</option>
+              <option>Office / Studio / Café</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="budget">Approximate budget (₹)</label>
+            <input id="budget" type="text" placeholder="e.g. 6–10 lakhs" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Tell us about your space</label>
+            <textarea
+              id="message"
+              placeholder="Flat size, city, rooms, and any specific ideas you have..."
+            ></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">
+            Submit enquiry
+            <i class="fas fa-paper-plane"></i>
+          </button>
+          <p id="formStatus" style="margin-top:0.7rem; font-size:0.8rem; color:#b5b5b5;"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Interior Studio. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#home">Back to top</a>
+        <a href="#projects">Portfolio</a>
+        <a href="#contact">Book a call</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById("navToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    navToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("open");
+    });
+
+    // Close menu on link click (mobile)
+    navMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("open");
+      });
+    });
+
+    // Form submit handler (front-end only)
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const status = document.getElementById("formStatus");
+      status.textContent = "Thanks for reaching out! We’ll contact you shortly.";
+      e.target.reset();
+    }
+
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
